@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html ng-app="ionicApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>My App</title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  
+  <body ng-app="starter" ng-controller="MyCtrl as ctrl">
+
+    <ion-pane>
+      <div class="bar bar-header bar-positive">
+  <button class="button button-icon icon ion-navicon"></button>
+  <div class="h1 title">Simplify Yout URL Link</div>
+  <button class="button button-clear button-positive">Edit</button>
+</div>
+<div>
+
+      <ion-content>
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+      
+<!-- Input original url link-->
+      <div class="list">
+
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Yout original URL here">
+    </label>
+    <button class="button button-small">
+      Shorten My URL
+    </button>
+  </div>
+
+</div>
+<div>&nbsp;</div>
+      <div>&nbsp;</div>
+
+<!--Responsive Grid  -->
+ <div class="row header">
+          <div class="col col-40">original URL</div>
+          <div class="col col-15">Short URL</div>
+          <div class="col col-25">Created</div>
+          <div class="col col-25">All CLick</div>
+          
+        </div>
+        <div class="row" ng-repeat="data in ctrl.data">
+          <div class="col col-40">test{{data.name}}</div>
+          <div class="col col-15">test{{data.code}}</div>
+          <div class="col col-25">LK {{data.limit}}</div>
+          <div class="col col-25">{{data.account}}</div>
+          <!-- <div class="col"><button class="button" ng-click="ctrl.add($index)">Add</button></div> -->
+        </div>  
+      <div>&nbsp;</div>
+      <div>&nbsp;</div>
+        <!-- List Card -->    
+      <div class="list card">
+
+  <a href="#" class="item item-icon-left">
+    <i class="icon ion-home"></i>
+    Enter home address
+  </a>
+
+  <a href="#" class="item item-icon-left">
+    <i class="icon ion-ios-telephone"></i>
+    Enter phone number
+  </a>
+
+  <a href="#" class="item item-icon-left">
+    <i class="icon ion-wifi"></i>
+    Enter wireless password
+  </a>
+
+  <a href="contact.html" class="item item-icon-left">
+    <i class="icon ion-card"></i>
+    Enter card information
+  </a>
+
+</div>
+      </ion-content>
+      </div>
+        <div class="bar bar-footer bar-positive">
+          <div class="title">Created By Chatur</div>
+        </div>
+    </ion-pane>
+  </body>
+</html>
